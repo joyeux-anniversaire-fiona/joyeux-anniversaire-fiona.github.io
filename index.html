@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz</title>
+	<meta charset="utf-8">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+			margin-bottom: 30px;
+		}
+		.container {
+			width: 80%;
+			margin: 0 auto;
+			background-color: #fff;
+			padding: 20px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+		}
+		.question {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		input[type="text"] {
+			font-size: 20px;
+			padding: 10px;
+			width: 100%;
+			border: none;
+			border-bottom: 2px solid #ccc;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			font-size: 20px;
+			padding: 10px 20px;
+			border: none;
+			cursor: pointer;
+			margin-bottom: 20px;
+		}
+		.feedback {
+			font-size: 20px;
+			color: #4CAF50;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Quiz</h1>
+	<div class="container">
+		<div class="question" id="question">Quelle est la question ?</div>
+		<form onsubmit="return false;">
+			<input type="text" id="reponse" placeholder="Entrez votre réponse ici...">
+			<input type="submit" value="Valider" onclick="verifierReponse()">
+		</form>
+		<div class="feedback" id="feedback"></div>
+	</div>
+	<script>
+		var questions = [
+			{
+                question: "Prends le chemin de la gare, tu dois te rendre là où la Yamanote Line croise la  Namboku Line. Quel est la station ?",
+                reponse: "komagome"
+            },
+			{
+                question: "Es tu dans le train ? (oui / non)",
+                reponse: "oui"
+            },
+			{
+                question: "Te voilà donc dans le train direction Komagome ! 
+                           Mais où faudra t il aller apres ?
+                           Ta prochaine destination est en lien avec la poésie ! 
+                           Je suis un genre de la poésie japonaise, apparu au VIII siecle, formé de Kana je privilégie ainsi l’oralité. 
+                           ",
+                reponse: ""
+            },
+			{
+                question: "",
+                reponse: ""
+            },
+			{
+                question: "",
+                reponse: ""
+            },
+		];
+		var index = 0;
+
+		function afficherQuestion() {
+			document.getElementById("question").innerHTML = questions[index].question;
+			document.getElementById("reponse").value = "";
+			document.getElementById("feedback").innerHTML = "";
+		}
+
+		function verifierReponse() {
+			var reponse = document.getElementById("reponse").value;
+			if (reponse == questions[index].reponse) {
+				document.getElementById("feedback").innerHTML = "Bonne réponse !";
+				index++;
+				if (index < questions.length) {
+					afficherQuestion();
+				} else {
+					document.getElementById("question").innerHTML = "Fin du quiz.";
+					document.getElementById("reponse").style.display = "none";
+					document.getElementById("feedback").style.display = "none";
+				}
+			} else {
+				document.getElementById("feedback").innerHTML = "Mauvaise réponse, essayez encore.";
+			}
+		}
+
+		afficherQuestion();
+	</script>
+</body>
+</html>
