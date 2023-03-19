@@ -50,7 +50,7 @@
 	</style>
 </head>
 <body>
-	<h1>Quiz</h1>
+	<h1>Joyeux anniversaire Fiona</h1>
 	<div class="container">
 		<div class="question" id="question">Quelle est la question ?</div>
 		<form onsubmit="return false;">
@@ -62,28 +62,147 @@
 	<script>
 		var questions = [
 			{
-                question: "Prends le chemin de la gare, tu dois te rendre là où la Yamanote Line croise la  Namboku Line. Quel est la station ?",
-                reponse: "komagome"
+                question: "\
+                    Prends le chemin de la gare, tu dois te rendre là où la Yamanote Line croise la  Namboku Line.\
+                    QUESTION: Quel est la station ?\
+                ",
+                reponse: "komagome",
             },
 			{
-                question: "Es tu dans le train ? (oui / non)",
-                reponse: "oui"
+                question: "QUESTION: Es tu dans le train ? (oui / non)",
+                reponse: "oui",
             },
 			{
-                question: "Te voilà donc dans le train direction Komagome ! 
-                           Mais où faudra t il aller apres ?
-                           Ta prochaine destination est en lien avec la poésie ! 
-                           Je suis un genre de la poésie japonaise, apparu au VIII siecle, formé de Kana je privilégie ainsi l’oralité. 
-                           ",
-                reponse: ""
+                question: " \
+                    Te voila dans le train direction Komagome !  \
+                    Mais où faudra t il aller apres ? Ta prochaine destination est en lien avec la poésie ! \
+                    Je suis un genre de la poésie japonaise, apparu au VIII siecle, formé de Kana je privilégie ainsi l’oralité. \
+                    QUESTION: Qui suis je ? \
+                ",
+                reponse: "waka",
             },
 			{
-                question: "",
-                reponse: ""
+                question: " \
+                    Mince ! Le système de sécurité ultra sophistiqué de ce site web a chiffré l’image contenant la destination ! \
+                    Pour déchiffrer l’image, il faut que tu remettes la même réponse qu’à la question précédente mais en utilisant le même algorithme de chiffrement du site web. \
+                    Si tu es bloquée pense à ton Avocat \
+                    QUESTION: Quel est le code chiffré ? \
+                ",
+                reponse: "gkuk",
+                indice : "AvoK",
+                img: "",
             },
 			{
-                question: "",
-                reponse: ""
+                question: " \
+                    Félicitation tu as déchiffré l’image ! \
+                    Rends à l'entrée de ce parc. Tu peux prendre un petit livret et faire le tampon mais attention il est interdit de l’ouvrir et en générale de chercher des informations sur ce parc.\
+                    Tu n'as pas le droit de regarder les plans dans le parc non plus!\
+                    QUESTION: Es-tu prête ? (oui / non) \
+                ",
+                reponse: "oui",
+            },
+			{
+                question: " \
+                    Retrouve l’endroit où j’ai pris cette photo. \
+                    QUESTION: Quel est le numéro de l’arbre derrière toi ? \
+                ",
+                reponse: "140",
+            },
+			{
+                question: " \
+                    Voici un siège ! il se trouve sur la plus haute colline artificielle du parc qui culmine à 35m de hauteur. \
+                    Son sommet est appelé Fujimi-yama. Dans une époque passée on pouvait voir le Mont Fuji ! \
+                    QUESTION: Envoie-moi un selfie de vous 3 une fois la haut \
+                ",
+                reponse: "21031197",
+            },
+			{
+                question: " \
+                    Retrouve l’endroit où j’ai pris cette photo.\
+                    QUESTION: Trouvé ? (oui / non) \
+                ",
+                reponse: "oui",
+                indice: "" // photo
+            },
+			{
+                question: " \
+                    Je suis le chemin que tu viens de traverser et où tu te trouves à présent. J’ai le même nom que les araignées dans les temps anciens! \
+                    QUESTION:  Comment je m’appelle ? \
+                ",
+                reponse: "sasaganinomichi", // enlever les espace ou les tirets
+            },
+			{
+                question: " \
+                    Résout le rebus et trouve cet endroit. \
+                    QUESTION: En quelle matière est fait cet endroit ? \
+                ",
+                reponse: "pierre",
+            },
+			{
+                question: " \
+                    Va au milieu du point, mets toi face au lac et a l‘ile. \
+                    QUESTION: C'est fait ? (oui / non) \
+                ",
+                reponse: "oui",
+            },
+			{
+                question: " \
+                    Super, fait un 180, vois tu le petite chemin et sa petite colline ? rends y toi ! \
+                    QUESTION: T'y es ? (oui / non) \
+                ",
+                reponse: "oui",
+            },
+			{
+                question: " \
+                    Ici rien de special à faire mais n'est ce pas magnifique ! \
+                    Jardin Daimyo (seigneur féodal) de style Kaiyushiki-tsukiyama-sensui (jardins-promenade avec colline et étang) inspiré de la poésie traditionnelle japonaise Waka. \
+                    Il fut fondé par Yanagisawa Yoshiyasu, fidèle confident du cinquième shôgun Tokugawa Tsunayoshi. \
+                    Vous cheminerez dans le jardin en longeant l'étang, profitant de la douceur et de la subtilité de ces paysages. \
+                    Rikugien est l'un des plus importants jardins daimyo de l'époque Edo.\
+                    Devenu la résidence secondaire d'Iwasaki Yataro (le fondateur de Mitsubishi) pendant la période Meiji, le jardin est légué à la Ville de Tokyo en 1938. \
+                    Patrimoine culturel de renom, il est désigné par l'état Site exceptionnel de première catégorie en 1953. \
+                    Dans le jardin, il y a des sites nommés “88 vues” qui reflètent des paysages pittoresques de la littérature classique chinoise ou des poésies classiques japonaises. \
+                    QUESTION: Reponse 'GTH' \
+                ",
+                reponse: "GTH",
+            },
+			{
+                question: " \
+                    A coté d’un petit pavillion coule un petit ruisseau entre les roches qui divisent l’eau. Il s’agit de 3 des 88 views. \
+                    QUESTION: Chacunes de ces 3 views à un numéro, si tu fais la somme des 3 numéro, combien obtiens-tu ?  \
+                ",
+                reponse: "131",
+                indice: "" //image
+            },
+			{
+                question: " \
+                    Regarde l’eau coulée, tu ne trouves pas ca hypnotique !? \
+                    QUESTION : Au fait comment s’appelle le pavillion à coté ? \
+                ",
+                reponse: "takimichayaarbor", // retirer tous les espaces et tirets 
+            },
+			{
+                question: " \
+                    Un Sekichu est un pilier en pierre qui marquait à l’origine chacun des 88 sites admirables du jardin, associés à la poésie Waka.\
+                    Il n' en reste cependant aujourd' hui que 32 ! \
+                    QUESTION: Retrouve ce Sekichu ! Tu y'es ? (oui / non) \
+                ",
+                reponse: "oui",
+                indice: "La végétation autour est sûrement unique a cet endroit dont je fais l’angle en extrémité.",
+                img: "",
+            },
+			{
+                question: " \
+                    Comment s'appelle le nom du passage sur lequel tu es ? \
+                ",
+                reponse: "hanatokomochipath",
+            },
+			{
+                question: " \
+                    Je suis une île légendaire où vit un sorcier immortel. Ces îles étaient construites au sein des jardins japonais pour souhaiter jeunesse éternelle et immortalité.\
+                    QUESTION: Quel est mon nom ? \
+                ",
+                reponse: "horaijima",
             },
 		];
 		var index = 0;
@@ -95,7 +214,10 @@
 		}
 
 		function verifierReponse() {
-			var reponse = document.getElementById("reponse").value;
+			var reponse = document.getElementById("reponse").value.replace(/[^0-9a-zA-Z]/g, '').toLowerCase();
+            console.log("=================") //DEBUG
+            console.log(reponse)  //DEBUG
+            console.log("=================")  //DEBUG
 			if (reponse == questions[index].reponse) {
 				document.getElementById("feedback").innerHTML = "Bonne réponse !";
 				index++;
@@ -107,7 +229,7 @@
 					document.getElementById("feedback").style.display = "none";
 				}
 			} else {
-				document.getElementById("feedback").innerHTML = "Mauvaise réponse, essayez encore.";
+				document.getElementById("feedback").innerHTML = "Non bebouuu c'est une mauvaise réponse, essaye encore.";
 			}
 		}
 
