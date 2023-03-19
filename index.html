@@ -174,7 +174,7 @@
                 question: " \
                     Mince ! Le système de sécurité ultra sophistiqué de ce site web a chiffré l’image contenant la destination ! <br/>\
                     Pour déchiffrer l’image, il faut que tu remettes la même réponse qu’à la question précédente mais en utilisant le même algorithme de chiffrement du site web. <br/>\
-                    Si tu es bloquée pense à ton Avocat <br/><br/>\
+                    Ce systeme repose sur le principe de l'Avocat. <br/><br/>\
                     QUESTION: Quel est le code chiffré ? \
                 ",
                 reponse: "gkuk",
@@ -183,8 +183,8 @@
             },
 			{
                 question: " \
-                    Félicitation tu as déchiffré l’image ! <br/>\
-                    Rends à l'entrée de ce parc. Tu peux prendre un petit livret et faire le tampon mais attention il est interdit de l’ouvrir et en générale de chercher des informations sur ce parc.<br/>\
+                    Félicitation tu as déchiffré l’image ! <br/><br/>\
+                    Rends toi à l'entrée de ce parc. Tu peux prendre un petit livret et faire le tampon mais attention il est interdit de l’ouvrir et en générale de chercher des informations sur ce parc.<br/>\
                     Tu n'as pas le droit de regarder les plans dans le parc non plus! <br/> \
                     Tu peux parcontre lire les panneaux explicatifs devant les monuments.<br/><br/>\
                     QUESTION: Es-tu prête ? (oui / non) \
@@ -206,7 +206,7 @@
                 question: " \
                     Voici un siège ! il se trouve sur la plus haute colline artificielle du parc qui culmine à 35m de hauteur. <br/>\
                     Son sommet est appelé Fujimi-yama. Dans une époque passée on pouvait voir le Mont Fuji ! <br/><br/>\
-                    QUESTION: Envoie-moi un selfie de vous 3 une fois la haut \
+                    QUESTION: Envoie-moi un selfie de vous 3 une fois la haut. \
                 ",
                 reponse: "21031997",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
@@ -231,16 +231,16 @@
             },
 			{
                 question: " \
-                    Résout le rebus et trouve cet endroit. <br/><br/>\
+                    Résout le rebus mi japonais mi anglais et trouve cet endroit. <br/><br/>\
                     QUESTION: En quelle matière est fait cet endroit ?\
                 ",
                 reponse: "pierre",
-                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
+                indice: "Les 3 premieres images sont en japonais et dénominent l'endroit.",
                 img: "img/4_enigme.png"
             },
 			{
                 question: " \
-                    Va au milieu du point, mets toi face au lac et à l‘ile. <br/><br/>\
+                    Va au milieu du point, mets toi face au lac et à l‘île. <br/><br/>\
                     QUESTION: C'est fait ? (oui / non) \
                 ",
                 reponse: "oui",
@@ -256,13 +256,13 @@
             },
 			{
                 question: " \
-                    Ici rien de special à faire mais n'est ce pas magnifique !? <br/><br/>\
+                    Ici rien de special à faire mais n'est-ce pas magnifique !? <br/><br/>\
                     Jardin Daimyo (seigneur féodal) de style Kaiyushiki-tsukiyama-sensui (jardins-promenade avec colline et étang) inspiré de la poésie traditionnelle japonaise Waka. <br/>\
                     Il fut fondé par Yanagisawa Yoshiyasu, fidèle confident du cinquième shôgun Tokugawa Tsunayoshi. <br/>\
                     Vous cheminerez dans le jardin en longeant l'étang, profitant de la douceur et de la subtilité de ces paysages. <br/>\
                     Rikugien est l'un des plus importants jardins daimyo de l'époque Edo.<br/>\
                     Devenu la résidence secondaire d'Iwasaki Yataro (le fondateur de Mitsubishi) pendant la période Meiji, le jardin est légué à la Ville de Tokyo en 1938. <br/>\
-                    Patrimoine culturel de renom, il est désigné par l'état Site exceptionnel de première catégorie en 1953. <br/>\
+                    Patrimoine culturel de renom, il est désigné par l'état 'Site Exceptionnel de Première Catégorie' en 1953. <br/>\
                     Dans le jardin, il y a des sites nommés “88 vues” qui reflètent des paysages pittoresques de la littérature classique chinoise ou des poésies classiques japonaises. <br/><br/>\
                     QUESTION: Reponse 'GTH' \
                 ",
@@ -271,7 +271,7 @@
             },
 			{
                 question: " \
-                    A coté d’un petit pavillion coule un petit ruisseau entre les roches qui divisent l’eau. Il s’agit de 3 des 88 views. <br/><br/>\
+                    A coté d’un petit pavillion l'eau et les roches se divisent mutuellement. Il s’agit de 3 des 88 views. <br/><br/>\
                     QUESTION: Chacunes de ces 3 views à un numéro, si tu fais la somme des 3 numéro, combien obtiens-tu ?  \
                 ",
                 reponse: "131",
@@ -308,7 +308,7 @@
                     QUESTION: Quel est mon nom ? \
                 ",
                 reponse: "horaijima",
-                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
+                indice: "Je suis en pierre de dragon.",
             },
 		];
 		var index = 0;
@@ -336,9 +336,9 @@
 		}
 
 		function verifierReponse() {
-            index++;
-            afficherQuestion();
-            return ;
+            /* index++; */
+            /* afficherQuestion(); */
+            /* return ; */
 			var reponse = document.getElementById("reponse").value.replace(/[^0-9a-zA-Z]/g, '').toLowerCase();
 			if (reponse == questions[index].reponse) {
 				document.getElementById("feedback").innerHTML = "Bonne réponse !";
