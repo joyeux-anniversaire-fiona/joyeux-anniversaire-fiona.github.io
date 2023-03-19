@@ -6,14 +6,18 @@
 	<style>
 		body {
 			font-family: Arial, sans-serif;
-			background-color: #f2f2f2;
+            background: linear-gradient(to bottom, #4F6D7A, #C0C0C0);
 		}
 		h1 {
 			text-align: center;
 			margin-top: 50px;
 			margin-bottom: 30px;
 		}
+        .hidden {
+         display: none;
+        }
 		.container {
+            position: relative;
 			width: 80%;
 			margin: 0 auto;
 			background-color: #fff;
@@ -63,6 +67,10 @@
         }
         #indice:hover {
             background-color: #ffad33; /* couleur de fond au survol */
+        }
+        #photo {
+            max-width: 95%;
+            max-height: 95%;
         }
 		.feedback {
 			font-size: 20px;
@@ -171,12 +179,12 @@
             },
 			{
                 question: " \
-                    Résout le rebus et trouve cet endroit. <br/>\
-                    QUESTION: En quelle matière est fait cet endroit ? <br/><br/>\
+                    Résout le rebus et trouve cet endroit. <br/><br/>\
+                    QUESTION: En quelle matière est fait cet endroit ?\
                 ",
                 reponse: "pierre",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
-                img: "img/4_enigme.jpg"
+                img: "img/4_enigme.png"
             },
 			{
                 question: " \
@@ -254,27 +262,31 @@
 		var index = 0;
 
 		function afficherQuestion() {
+            const img = document.getElementById("photo");
+            const question = questions[index]
+
            // question 
-			document.getElementById("question").innerHTML = questions[index].question;
+			document.getElementById("question").innerHTML = question.question;
             // indice
-            document.getElementById("indice").onclick = function(){alert(questions[index].indice)}
+            document.getElementById("indice").onclick = function(){alert(question.indice)}
 
             // image
-            document.getElementById('photo').src = questions[index].img;
+            if (question.img !== undefined) {
+                img.src = question.img;
+                img.classList.remove("hidden");
+            }
+            else {
+                img.classList.add("hidden");
 
-            console.log("=================") //DEBUG
-            console.log(questions[index].img)
-            console.log("=================") //DEBUG
-            /* document.getElementById('photo').src.innerHTML = questions[index].img; */
 			document.getElementById("reponse").value = "";
 			document.getElementById("feedback").innerHTML = "";
 		}
 
 		function verifierReponse() {
+            index++;
+            afficherQuestion();
+            return ;
 			var reponse = document.getElementById("reponse").value.replace(/[^0-9a-zA-Z]/g, '').toLowerCase();
-            console.log("=================") //DEBUG
-            console.log(reponse)  //DEBUG
-            console.log("=================")  //DEBUG
 			if (reponse == questions[index].reponse) {
 				document.getElementById("feedback").innerHTML = "Bonne réponse !";
 				index++;
@@ -286,11 +298,12 @@
 					document.getElementById("feedback").style.display = "none";
 				}
 			} else {
-				document.getElementById("feedback").innerHTML = "Non bebouuu c'est une mauvaise réponse, essaye encore.";
+				document.getElementById("feedback").innerHTML = "Mon bebouuu c'est une mauvaise réponse, essaye encore.";
 			}
 		}
 
 		afficherQuestion();
+
 	</script>
 </body>
 </html>
