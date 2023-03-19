@@ -35,12 +35,17 @@
 		}
 		input[type="submit"] {
 			background-color: #4CAF50;
-			color: #fff;
-			font-size: 20px;
-			padding: 10px 20px;
-			border: none;
-			cursor: pointer;
-			margin-bottom: 20px;
+            border: none; /* pas de bordure */
+            color: white; /* couleur du texte */
+            padding: 10px 20px; /* espacement interne */
+            text-align: center; /* alignement du texte */
+            text-decoration: none; /* pas de soulignement */
+            display: inline-block; /* afficher en ligne */
+            font-size: 20px; /* taille de police */
+            margin: 10px; /* marges extérieures */
+            cursor: pointer; /* curseur pointer */
+            border-radius: 5px; /* arrondir les coins */
+            box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2); /* ombre portée */
 		}
         #indice {
             background-color: #ff9933; /* couleur de fond */
@@ -50,7 +55,7 @@
             text-align: center; /* alignement du texte */
             text-decoration: none; /* pas de soulignement */
             display: inline-block; /* afficher en ligne */
-            font-size: 16px; /* taille de police */
+            font-size: 20px; /* taille de police */
             margin: 10px; /* marges extérieures */
             cursor: pointer; /* curseur pointer */
             border-radius: 5px; /* arrondir les coins */
@@ -77,8 +82,8 @@
 		<form onsubmit="return false;">
 			<input type="text" id="reponse" placeholder="Entrez votre réponse ici...">
 			<input type="submit" value="Valider" onclick="verifierReponse()">
+            <button type="button" id="indice" onclick="alert('You pressed the button!')">Indice !</button>
 		</form>
-        <button type="button" id="indice" onclick="alert('You pressed the button!')">Indice !</button>
 		<div class="feedback" id="feedback"></div>
 	</div>
 	<script>
