@@ -77,6 +77,47 @@
 			color: #4CAF50;
 			margin-bottom: 20px;
 		}
+        #popup-container {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.5);
+          z-index: 9999;
+        }
+        #popup {
+          position: relative;
+          margin: auto;
+          padding: 20px;
+          width: 70%;
+          height: 70%;
+          background-color: white;
+        }
+        #close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 18px;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+        }
+        #popup-content {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        #popup-content img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+        #popup-content p {
+          font-size: 24px;
+          text-align: center;
+        }
 	</style>
 </head>
 <body>
@@ -90,7 +131,19 @@
 		<form onsubmit="return false;">
 			<input type="text" id="reponse" placeholder="Entrez votre réponse ici...">
 			<input type="submit" value="Valider" onclick="verifierReponse()">
-            <button type="button" id="indice" onclick="alert('You pressed the button!')">Indice !</button>
+
+
+            <!-- <button type="button" id="indice" onclick="alert('You pressed the button!')">Indice !</button> -->
+            <button id="indice-btn">Indice</button>
+            <div id="popup-container">
+              <div id="popup">
+                <button id="close-btn">X</button>
+                <div id="popup-content">
+                  <!-- Le contenu de la popup sera ajouté ici -->
+                </div>
+              </div>
+            </div>
+
 		</form>
 		<div class="feedback" id="feedback"></div>
 	</div>
@@ -103,6 +156,7 @@
                 ",
                 reponse: "komagome",
                 indice: "Désolé pas d indice ici, si tu es bloquée appelle moi.",
+                indiceImg: "img/1_enigme.jpg"
             },
 			{
                 question: "QUESTION: Es tu dans le train ? (oui / non)",
@@ -263,7 +317,7 @@
 
 		function afficherQuestion() {
             const img = document.getElementById("photo");
-            const question = questions[index]
+            const question = questions[index];
 
            // question 
 			document.getElementById("question").innerHTML = question.question;
@@ -277,15 +331,16 @@
             }
             else {
                 img.classList.add("hidden");
+            }
 
 			document.getElementById("reponse").value = "";
 			document.getElementById("feedback").innerHTML = "";
 		}
 
 		function verifierReponse() {
-            index++;
-            afficherQuestion();
-            return ;
+            /* index++; */
+            /* afficherQuestion(); */
+            /* return ; */
 			var reponse = document.getElementById("reponse").value.replace(/[^0-9a-zA-Z]/g, '').toLowerCase();
 			if (reponse == questions[index].reponse) {
 				document.getElementById("feedback").innerHTML = "Bonne réponse !";
@@ -302,8 +357,39 @@
 			}
 		}
 
-		afficherQuestion();
+        // ############## POPUP #####################
+        const indiceBtn = document.getElementById("indice-btn");
+        const popupContainer = document.getElementById("popup-container");
+        const popupContent = document.getElementById("popup-content");
+        const closeBtn = document.getElementById("close-btn");
 
+        // Fonction qui ouvre la popup avec le contenu souhaité
+        function openPopup(content) {
+          popupContent.innerHTML = content;
+          popupContainer.style.display = "flex";
+        }
+
+        // Événement de clic sur le bouton Indice
+        indiceBtn.addEventListener("click", () => {
+          // Contenu texte à afficher dans la popup
+          const texte = "<p>Voici un indice : ce que vous cherchez se trouve dans le tiroir du bas</p>";
+          
+          // Contenu image à afficher dans la popup
+          const image = "<img src='chemin/vers/image.jpg' alt='Image d'indice'>";
+          
+          // Choisissez le contenu que vous souhaitez afficher
+          const contenu = texte;
+          
+          openPopup(contenu);
+        });
+
+        // Événement de clic sur le bouton de fermeture
+        closeBtn.addEventListener("click", () => {
+          popupContainer.style.display = "none";
+        });
+        // ####################################################
+
+		afficherQuestion(); // <------- pourquoi ????
 	</script>
 </body>
 </html>
