@@ -69,7 +69,10 @@
 <body>
 	<h1>Joyeux anniversaire Fiona</h1>
 	<div class="container">
-        <img src= id="photo"/>
+        <div style="text-align: center;">
+            <img src="" id="photo"/>
+        </div>
+        <br/>
 		<div class="question" id="question">Quelle est la question ?</div>
 		<form onsubmit="return false;">
 			<input type="text" id="reponse" placeholder="Entrez votre réponse ici...">
@@ -82,11 +85,10 @@
 		var questions = [
 			{
                 question: "\
-                    Prends le chemin de la gare, tu dois te rendre là où la Yamanote Line croise la  Namboku Line.\
+                Prends le chemin de la gare, tu dois te rendre là où la Yamanote Line croise la  Namboku Line. <br/><br/>\
                     QUESTION: Quel est la station ?\
                 ",
                 reponse: "komagome",
-                img: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==",
                 indice: "Désolé pas d indice ici, si tu es bloquée appelle moi.",
             },
 			{
@@ -96,9 +98,9 @@
             },
 			{
                 question: " \
-                    Te voila dans le train direction Komagome !  \
-                    Mais où faudra t il aller apres ? Ta prochaine destination est en lien avec la poésie ! \
-                    Je suis un genre de la poésie japonaise, apparu au VIII siecle, formé de Kana je privilégie ainsi l’oralité. \
+                    Te voila dans le train direction Komagome !  <br/>\
+                    Mais où faudra t il aller apres ? Ta prochaine destination est en lien avec la poésie ! <br/>\
+                    Je suis un genre de la poésie japonaise, apparu au VIII siecle, formé de Kana je privilégie ainsi l’oralité. <br/><br/>\
                     QUESTION: Qui suis je ? \
                 ",
                 reponse: "waka",
@@ -106,53 +108,57 @@
             },
 			{
                 question: " \
-                    Mince ! Le système de sécurité ultra sophistiqué de ce site web a chiffré l’image contenant la destination ! \
-                    Pour déchiffrer l’image, il faut que tu remettes la même réponse qu’à la question précédente mais en utilisant le même algorithme de chiffrement du site web. \
-                    Si tu es bloquée pense à ton Avocat \
+                    Mince ! Le système de sécurité ultra sophistiqué de ce site web a chiffré l’image contenant la destination ! <br/>\
+                    Pour déchiffrer l’image, il faut que tu remettes la même réponse qu’à la question précédente mais en utilisant le même algorithme de chiffrement du site web. <br/>\
+                Si tu es bloquée pense à ton Avocat <br/><br/>\
                     QUESTION: Quel est le code chiffré ? \
                 ",
                 reponse: "gkuk",
                 indice : "AvoK",
-                img: "",
+                img: "img/parc_encrypt.png",
             },
 			{
                 question: " \
-                    Félicitation tu as déchiffré l’image ! \
-                    Rends à l'entrée de ce parc. Tu peux prendre un petit livret et faire le tampon mais attention il est interdit de l’ouvrir et en générale de chercher des informations sur ce parc.\
-                    Tu n'as pas le droit de regarder les plans dans le parc non plus!\
+                    Félicitation tu as déchiffré l’image ! <br/>\
+                    Rends à l'entrée de ce parc. Tu peux prendre un petit livret et faire le tampon mais attention il est interdit de l’ouvrir et en générale de chercher des informations sur ce parc.<br/>\
+                    Tu n'as pas le droit de regarder les plans dans le parc non plus!<br/><br/>\
                     QUESTION: Es-tu prête ? (oui / non) \
                 ",
                 reponse: "oui",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
+                img: "img/parc.png",
             },
 			{
                 question: " \
-                    Retrouve l’endroit où j’ai pris cette photo. \
+                    Retrouve l’endroit où j’ai pris cette photo. <br/><br/>\
                     QUESTION: Quel est le numéro de l’arbre derrière toi ? \
                 ",
                 reponse: "140",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
+                img: "img/1_enigme.jpg"
             },
 			{
                 question: " \
-                    Voici un siège ! il se trouve sur la plus haute colline artificielle du parc qui culmine à 35m de hauteur. \
-                    Son sommet est appelé Fujimi-yama. Dans une époque passée on pouvait voir le Mont Fuji ! \
+                    Voici un siège ! il se trouve sur la plus haute colline artificielle du parc qui culmine à 35m de hauteur. <br/>\
+                    Son sommet est appelé Fujimi-yama. Dans une époque passée on pouvait voir le Mont Fuji ! <br/><br/>\
                     QUESTION: Envoie-moi un selfie de vous 3 une fois la haut \
                 ",
-                reponse: "21031197",
+                reponse: "21031997",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
+                img: "img/2_enigme.jpg"
             },
 			{
                 question: " \
-                    Retrouve l’endroit où j’ai pris cette photo.\
+                    Retrouve l’endroit où j’ai pris cette photo.<br/><br/>\
                     QUESTION: Trouvé ? (oui / non) \
                 ",
                 reponse: "oui",
-                indice: "" // photo
+                indice: "img/ _enigme.jpg", 
+                img: "img/3_enigme.jpg"
             },
 			{
                 question: " \
-                    Je suis le chemin que tu viens de traverser et où tu te trouves à présent. J’ai le même nom que les araignées dans les temps anciens! \
+                    Je suis le chemin que tu viens de traverser et où tu te trouves à présent. J’ai le même nom que les araignées dans les temps anciens! <br/><br/>\
                     QUESTION:  Comment je m’appelle ? \
                 ",
                 reponse: "sasaganinomichi", // enlever les espace ou les tirets
@@ -160,15 +166,16 @@
             },
 			{
                 question: " \
-                    Résout le rebus et trouve cet endroit. \
-                    QUESTION: En quelle matière est fait cet endroit ? \
+                    Résout le rebus et trouve cet endroit. <br/>\
+                    QUESTION: En quelle matière est fait cet endroit ? <br/><br/>\
                 ",
                 reponse: "pierre",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
+                img: "img/4_enigme.jpg"
             },
 			{
                 question: " \
-                    Va au milieu du point, mets toi face au lac et a l‘ile. \
+                    Va au milieu du point, mets toi face au lac et à l‘ile. <br/><br/>\
                     QUESTION: C'est fait ? (oui / non) \
                 ",
                 reponse: "oui",
@@ -176,7 +183,7 @@
             },
 			{
                 question: " \
-                    Super, fait un 180, vois tu le petite chemin et sa petite colline ? rends y toi ! \
+                    Super, fait un 180, vois tu le petite chemin et sa petite colline ? rends y toi ! <br/><br/>\
                     QUESTION: T'y es ? (oui / non) \
                 ",
                 reponse: "oui",
@@ -184,22 +191,22 @@
             },
 			{
                 question: " \
-                    Ici rien de special à faire mais n'est ce pas magnifique ! \
-                    Jardin Daimyo (seigneur féodal) de style Kaiyushiki-tsukiyama-sensui (jardins-promenade avec colline et étang) inspiré de la poésie traditionnelle japonaise Waka. \
-                    Il fut fondé par Yanagisawa Yoshiyasu, fidèle confident du cinquième shôgun Tokugawa Tsunayoshi. \
-                    Vous cheminerez dans le jardin en longeant l'étang, profitant de la douceur et de la subtilité de ces paysages. \
-                    Rikugien est l'un des plus importants jardins daimyo de l'époque Edo.\
-                    Devenu la résidence secondaire d'Iwasaki Yataro (le fondateur de Mitsubishi) pendant la période Meiji, le jardin est légué à la Ville de Tokyo en 1938. \
-                    Patrimoine culturel de renom, il est désigné par l'état Site exceptionnel de première catégorie en 1953. \
-                    Dans le jardin, il y a des sites nommés “88 vues” qui reflètent des paysages pittoresques de la littérature classique chinoise ou des poésies classiques japonaises. \
+                    Ici rien de special à faire mais n'est ce pas magnifique !? <br/><br/>\
+                    Jardin Daimyo (seigneur féodal) de style Kaiyushiki-tsukiyama-sensui (jardins-promenade avec colline et étang) inspiré de la poésie traditionnelle japonaise Waka. <br/>\
+                    Il fut fondé par Yanagisawa Yoshiyasu, fidèle confident du cinquième shôgun Tokugawa Tsunayoshi. <br/>\
+                    Vous cheminerez dans le jardin en longeant l'étang, profitant de la douceur et de la subtilité de ces paysages. <br/>\
+                    Rikugien est l'un des plus importants jardins daimyo de l'époque Edo.<br/>\
+                    Devenu la résidence secondaire d'Iwasaki Yataro (le fondateur de Mitsubishi) pendant la période Meiji, le jardin est légué à la Ville de Tokyo en 1938. <br/>\
+                    Patrimoine culturel de renom, il est désigné par l'état Site exceptionnel de première catégorie en 1953. <br/>\
+                    Dans le jardin, il y a des sites nommés “88 vues” qui reflètent des paysages pittoresques de la littérature classique chinoise ou des poésies classiques japonaises. <br/><br/>\
                     QUESTION: Reponse 'GTH' \
                 ",
-                reponse: "GTH",
+                reponse: "gth",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
-                    A coté d’un petit pavillion coule un petit ruisseau entre les roches qui divisent l’eau. Il s’agit de 3 des 88 views. \
+                    A coté d’un petit pavillion coule un petit ruisseau entre les roches qui divisent l’eau. Il s’agit de 3 des 88 views. <br/><br/>\
                     QUESTION: Chacunes de ces 3 views à un numéro, si tu fais la somme des 3 numéro, combien obtiens-tu ?  \
                 ",
                 reponse: "131",
@@ -207,7 +214,7 @@
             },
 			{
                 question: " \
-                    Regarde l’eau coulée, tu ne trouves pas ca hypnotique !? \
+                    Regarde l’eau coulée, tu ne trouves pas ca hypnotique !? <br/><br/>\
                     QUESTION : Au fait comment s’appelle le pavillion à coté ? \
                 ",
                 reponse: "takimichayaarbor", // retirer tous les espaces et tirets 
@@ -215,24 +222,24 @@
             },
 			{
                 question: " \
-                    Un Sekichu est un pilier en pierre qui marquait à l’origine chacun des 88 sites admirables du jardin, associés à la poésie Waka.\
-                    Il n' en reste cependant aujourd' hui que 32 ! \
+                    Un Sekichu est un pilier en pierre qui marquait à l’origine chacun des 88 sites admirables du jardin, associés à la poésie Waka.<br/>\
+                    Il n' en reste cependant aujourd' hui que 32 ! <br/><br/>\
                     QUESTION: Retrouve ce Sekichu ! Tu y'es ? (oui / non) \
                 ",
                 reponse: "oui",
                 indice: "La végétation autour est sûrement unique a cet endroit dont je fais l’angle en extrémité.",
-                img: "",
+                img: "img/6_enigme.jpg"
             },
 			{
                 question: " \
-                    Comment s'appelle le nom du passage sur lequel tu es ? \
+                    QUESTION: Comment s'appelle le nom du passage sur lequel tu es ? \
                 ",
                 reponse: "hanatokomochipath",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
-                    Je suis une île légendaire où vit un sorcier immortel. Ces îles étaient construites au sein des jardins japonais pour souhaiter jeunesse éternelle et immortalité.\
+                    Je suis une île légendaire où vit un sorcier immortel. Ces îles étaient construites au sein des jardins japonais pour souhaiter jeunesse éternelle et immortalité.<br/><br/>\
                     QUESTION: Quel est mon nom ? \
                 ",
                 reponse: "horaijima",
@@ -248,7 +255,7 @@
             document.getElementById("indice").onclick = function(){alert(questions[index].indice)}
 
             // image
-            document.getElementById('photo').src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPk+P+/HgAHggKZpMv1tAAAAABJRU5ErkJggg==";
+            document.getElementById('photo').src = questions[index].img;
 
             console.log("=================") //DEBUG
             console.log(questions[index].img)
