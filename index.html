@@ -42,6 +42,23 @@
 			cursor: pointer;
 			margin-bottom: 20px;
 		}
+        #indice {
+            background-color: #ff9933; /* couleur de fond */
+            border: none; /* pas de bordure */
+            color: white; /* couleur du texte */
+            padding: 10px 20px; /* espacement interne */
+            text-align: center; /* alignement du texte */
+            text-decoration: none; /* pas de soulignement */
+            display: inline-block; /* afficher en ligne */
+            font-size: 16px; /* taille de police */
+            margin: 10px; /* marges extérieures */
+            cursor: pointer; /* curseur pointer */
+            border-radius: 5px; /* arrondir les coins */
+            box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2); /* ombre portée */
+        }
+        #indice:hover {
+            background-color: #ffad33; /* couleur de fond au survol */
+        }
 		.feedback {
 			font-size: 20px;
 			color: #4CAF50;
@@ -52,11 +69,13 @@
 <body>
 	<h1>Joyeux anniversaire Fiona</h1>
 	<div class="container">
+        <img src= id="photo"/>
 		<div class="question" id="question">Quelle est la question ?</div>
 		<form onsubmit="return false;">
 			<input type="text" id="reponse" placeholder="Entrez votre réponse ici...">
 			<input type="submit" value="Valider" onclick="verifierReponse()">
 		</form>
+        <button type="button" id="indice" onclick="alert('You pressed the button!')">Indice !</button>
 		<div class="feedback" id="feedback"></div>
 	</div>
 	<script>
@@ -67,10 +86,13 @@
                     QUESTION: Quel est la station ?\
                 ",
                 reponse: "komagome",
+                img: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==",
+                indice: "Désolé pas d indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: "QUESTION: Es tu dans le train ? (oui / non)",
                 reponse: "oui",
+                indice: "Désolé pas d indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
@@ -80,6 +102,7 @@
                     QUESTION: Qui suis je ? \
                 ",
                 reponse: "waka",
+                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
@@ -100,6 +123,7 @@
                     QUESTION: Es-tu prête ? (oui / non) \
                 ",
                 reponse: "oui",
+                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
@@ -107,6 +131,7 @@
                     QUESTION: Quel est le numéro de l’arbre derrière toi ? \
                 ",
                 reponse: "140",
+                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
@@ -115,6 +140,7 @@
                     QUESTION: Envoie-moi un selfie de vous 3 une fois la haut \
                 ",
                 reponse: "21031197",
+                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
@@ -130,6 +156,7 @@
                     QUESTION:  Comment je m’appelle ? \
                 ",
                 reponse: "sasaganinomichi", // enlever les espace ou les tirets
+                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
@@ -137,6 +164,7 @@
                     QUESTION: En quelle matière est fait cet endroit ? \
                 ",
                 reponse: "pierre",
+                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
@@ -144,6 +172,7 @@
                     QUESTION: C'est fait ? (oui / non) \
                 ",
                 reponse: "oui",
+                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
@@ -151,6 +180,7 @@
                     QUESTION: T'y es ? (oui / non) \
                 ",
                 reponse: "oui",
+                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
@@ -165,6 +195,7 @@
                     QUESTION: Reponse 'GTH' \
                 ",
                 reponse: "GTH",
+                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
@@ -172,7 +203,7 @@
                     QUESTION: Chacunes de ces 3 views à un numéro, si tu fais la somme des 3 numéro, combien obtiens-tu ?  \
                 ",
                 reponse: "131",
-                indice: "" //image
+                indice: "", //image
             },
 			{
                 question: " \
@@ -180,6 +211,7 @@
                     QUESTION : Au fait comment s’appelle le pavillion à coté ? \
                 ",
                 reponse: "takimichayaarbor", // retirer tous les espaces et tirets 
+                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
@@ -196,6 +228,7 @@
                     Comment s'appelle le nom du passage sur lequel tu es ? \
                 ",
                 reponse: "hanatokomochipath",
+                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
@@ -203,12 +236,24 @@
                     QUESTION: Quel est mon nom ? \
                 ",
                 reponse: "horaijima",
+                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 		];
 		var index = 0;
 
 		function afficherQuestion() {
+           // question 
 			document.getElementById("question").innerHTML = questions[index].question;
+            // indice
+            document.getElementById("indice").onclick = function(){alert(questions[index].indice)}
+
+            // image
+            document.getElementById('photo').src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPk+P+/HgAHggKZpMv1tAAAAABJRU5ErkJggg==";
+
+            console.log("=================") //DEBUG
+            console.log(questions[index].img)
+            console.log("=================") //DEBUG
+            /* document.getElementById('photo').src.innerHTML = questions[index].img; */
 			document.getElementById("reponse").value = "";
 			document.getElementById("feedback").innerHTML = "";
 		}
