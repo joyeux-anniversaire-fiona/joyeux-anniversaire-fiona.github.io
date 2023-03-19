@@ -133,13 +133,11 @@
 			<input type="submit" value="Valider" onclick="verifierReponse()">
 
 
-            <!-- <button type="button" id="indice" onclick="alert('You pressed the button!')">Indice !</button> -->
             <button id="indice-btn">Indice</button>
             <div id="popup-container">
               <div id="popup">
                 <button id="close-btn">X</button>
                 <div id="popup-content">
-                  <!-- Le contenu de la popup sera ajouté ici -->
                 </div>
               </div>
             </div>
@@ -155,8 +153,7 @@
                     QUESTION: Quel est la station ?\
                 ",
                 reponse: "komagome",
-                indice: "Désolé pas d indice ici, si tu es bloquée appelle moi.",
-                indiceImg: "img/1_enigme.jpg"
+                indice: "14",
             },
 			{
                 question: "QUESTION: Es tu dans le train ? (oui / non)",
@@ -177,7 +174,7 @@
                 question: " \
                     Mince ! Le système de sécurité ultra sophistiqué de ce site web a chiffré l’image contenant la destination ! <br/>\
                     Pour déchiffrer l’image, il faut que tu remettes la même réponse qu’à la question précédente mais en utilisant le même algorithme de chiffrement du site web. <br/>\
-                Si tu es bloquée pense à ton Avocat <br/><br/>\
+                    Si tu es bloquée pense à ton Avocat <br/><br/>\
                     QUESTION: Quel est le code chiffré ? \
                 ",
                 reponse: "gkuk",
@@ -188,7 +185,8 @@
                 question: " \
                     Félicitation tu as déchiffré l’image ! <br/>\
                     Rends à l'entrée de ce parc. Tu peux prendre un petit livret et faire le tampon mais attention il est interdit de l’ouvrir et en générale de chercher des informations sur ce parc.<br/>\
-                    Tu n'as pas le droit de regarder les plans dans le parc non plus!<br/><br/>\
+                    Tu n'as pas le droit de regarder les plans dans le parc non plus! <br/> \
+                    Tu peux parcontre lire les panneaux explicatifs devant les monuments.<br/><br/>\
                     QUESTION: Es-tu prête ? (oui / non) \
                 ",
                 reponse: "oui",
@@ -220,7 +218,7 @@
                     QUESTION: Trouvé ? (oui / non) \
                 ",
                 reponse: "oui",
-                indice: "img/ _enigme.jpg", 
+                indice: "<img src='img/3_indice.jpg'/>", 
                 img: "img/3_enigme.jpg"
             },
 			{
@@ -229,7 +227,7 @@
                     QUESTION:  Comment je m’appelle ? \
                 ",
                 reponse: "sasaganinomichi", // enlever les espace ou les tirets
-                indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
+                indice: "<img src='img/3_indice.jpg'/>", 
             },
 			{
                 question: " \
@@ -277,14 +275,14 @@
                     QUESTION: Chacunes de ces 3 views à un numéro, si tu fais la somme des 3 numéro, combien obtiens-tu ?  \
                 ",
                 reponse: "131",
-                indice: "", //image
+                indice: "<img src='img/5_indice.jpg'/>",
             },
 			{
                 question: " \
                     Regarde l’eau coulée, tu ne trouves pas ca hypnotique !? <br/><br/>\
                     QUESTION : Au fait comment s’appelle le pavillion à coté ? \
                 ",
-                reponse: "takimichayaarbor", // retirer tous les espaces et tirets 
+                reponse: "takimichayaarbor",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
             },
 			{
@@ -294,7 +292,7 @@
                     QUESTION: Retrouve ce Sekichu ! Tu y'es ? (oui / non) \
                 ",
                 reponse: "oui",
-                indice: "La végétation autour est sûrement unique a cet endroit dont je fais l’angle en extrémité.",
+                indice: "La végétation autour est sûrement unique à cet endroit dont je fais l’angle en extrémité.",
                 img: "img/6_enigme.jpg"
             },
 			{
@@ -322,7 +320,7 @@
            // question 
 			document.getElementById("question").innerHTML = question.question;
             // indice
-            document.getElementById("indice").onclick = function(){alert(question.indice)}
+            document.getElementById("popup-content").value = question.indice;
 
             // image
             if (question.img !== undefined) {
@@ -338,9 +336,9 @@
 		}
 
 		function verifierReponse() {
-            /* index++; */
-            /* afficherQuestion(); */
-            /* return ; */
+            index++;
+            afficherQuestion();
+            return ;
 			var reponse = document.getElementById("reponse").value.replace(/[^0-9a-zA-Z]/g, '').toLowerCase();
 			if (reponse == questions[index].reponse) {
 				document.getElementById("feedback").innerHTML = "Bonne réponse !";
@@ -371,16 +369,11 @@
 
         // Événement de clic sur le bouton Indice
         indiceBtn.addEventListener("click", () => {
-          // Contenu texte à afficher dans la popup
-          const texte = "<p>Voici un indice : ce que vous cherchez se trouve dans le tiroir du bas</p>";
-          
-          // Contenu image à afficher dans la popup
-          const image = "<img src='chemin/vers/image.jpg' alt='Image d'indice'>";
-          
-          // Choisissez le contenu que vous souhaitez afficher
-          const contenu = texte;
-          
-          openPopup(contenu);
+
+            console.log(popupContent.value)
+            content_value = popupContent.value
+
+            openPopup(content_value);
         });
 
         // Événement de clic sur le bouton de fermeture
