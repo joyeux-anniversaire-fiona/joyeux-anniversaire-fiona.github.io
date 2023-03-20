@@ -129,7 +129,7 @@
 	</style>
 </head>
 <body>
-	<div class="container">
+	<div class="container" id="container">
 	<h1>QuizAnniversaire</h1>
         <div style="text-align: center;">
             <img src="" id="photo"/>
@@ -149,11 +149,11 @@
                     </div>
                   </div>
                 </div>
-
-
 		</form>
 		<div class="feedback" id="feedback"></div>
+
 	</div>
+
 	<script>
 		var questions = [
 			{
@@ -249,7 +249,7 @@
             },
 			{
                 question: " \
-                    Va au milieu du point, mets toi face au lac et à l‘île. <br/><br/>\
+                    Va au milieu du pont, mets toi face au lac et à l‘île. <br/><br/>\
                     <B>QUESTION</B>: C'est fait ? (oui / non) \
                 ",
                 reponse: "oui",
@@ -338,11 +338,6 @@
 
             document.body.style.backgroundImage = `url('img/background${index}.jpg')`;
 
-           // question 
-			document.getElementById("question").innerHTML = question.question;
-            // indice
-            document.getElementById("popup-content").value = question.indice;
-
             // image
             if (question.img !== undefined) {
                 img.src = question.img;
@@ -352,22 +347,44 @@
                 img.classList.add("hidden");
             }
 
+           // question 
+			document.getElementById("question").innerHTML = question.question;
+            // indice
+            document.getElementById("popup-content").value = question.indice;
+
 			document.getElementById("reponse").value = "";
 			document.getElementById("feedback").innerHTML = "";
 		}
 
+        // Récupération de la référence du container et du halo de chargement
+        const container = document.getElementById('container');
+
+        // Fonction pour afficher le halo de chargement
+        function showLoading() {
+          container.style.display = 'none';
+        }
+
+        // Fonction pour cacher le halo de chargement et réafficher le container
+        function hideLoading() {
+          container.style.display = 'block';
+}
 		function verifierReponse() {
             /* index++; */
             /* afficherQuestion(); */
             /* return ; */
+            
 			var reponse = document.getElementById("reponse").value.replace(/[^0-9a-zA-Z]/g, '').toLowerCase();
 			if (reponse == questions[index].reponse) {
 				document.getElementById("feedback").innerHTML = "Bonne réponse !";
 				index++;
 				if (index < questions.length) {
+                    showLoading()
+                    setTimeout(() => {
+                        hideLoading();
+                    }, 300)
 					afficherQuestion();
 				} else {
-					document.getElementById("question").innerHTML = "Fin du quiz.";
+					document.getElementById("question").innerHTML = "Fin du quiz. Rdv devant la statue à 17h30";
 					document.getElementById("reponse").style.display = "none";
 					document.getElementById("feedback").style.display = "none";
 				}
