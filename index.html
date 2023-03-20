@@ -5,13 +5,17 @@
 	<meta charset="utf-8">
 	<style>
 		body {
-			font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #4F6D7A, #C0C0C0);
+			<!-- font-family: Arial, sans-serif; -->
+            font-family: "gt-walsheim", arial, helvetica, sans-serif;
+            <!-- background: linear-gradient(to bottom, #4F6D7A, #C0C0C0); -->
+            color: #484848;
+            font-size: 30px;
+            background-image: url("img/background.jpg");
 		}
 		h1 {
 			text-align: center;
-			margin-top: 50px;
-			margin-bottom: 30px;
+			<!-- margin-top: 50px; -->
+			<!-- margin-bottom: 30px; -->
 		}
         .hidden {
          display: none;
@@ -23,10 +27,13 @@
 			background-color: #fff;
 			padding: 20px;
 			box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            border-radius: 30px;
 		}
 		.question {
 			font-size: 24px;
 			margin-bottom: 20px;
+            color: #2a75ff;
+            font-family: sans-serif;
 		}
 		input[type="text"] {
 			font-size: 20px;
@@ -153,22 +160,22 @@
 			{
                 question: "\
                 Prends le chemin de la gare, tu dois te rendre là où la Yamanote Line croise la  Namboku Line. <br/><br/>\
-                    QUESTION: Quel est la station ?\
+                <B>QUESTION</B>: Quelle est la station ?\
                 ",
                 reponse: "komagome",
                 indice: "14",
             },
 			{
-                question: "QUESTION: Es tu dans le train ? (oui / non)",
+                question: "<B>QUESTION</B>: Es tu dans le train ? (oui / non)",
                 reponse: "oui",
                 indice: "Désolé pas d indice ici, si tu es bloquée appelle moi.",
             },
 			{
                 question: " \
-                    Te voila dans le train direction Komagome !  <br/>\
-                    Mais où faudra t il aller apres ? Ta prochaine destination est en lien avec la poésie ! <br/>\
+                    Te voilà dans le train direction Komagome !  <br/>\
+                    Mais où faudra t il aller apres ?<br/>Ta prochaine destination est en lien avec la poésie ! <br/>\
                     Je suis un genre de la poésie japonaise, apparu au VIII siecle, formé de Kana je privilégie ainsi l’oralité. <br/><br/>\
-                    QUESTION: Qui suis je ? \
+                    <B>QUESTION</B>: Qui suis je ? \
                 ",
                 reponse: "waka",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
@@ -178,7 +185,7 @@
                     Mince ! Le système de sécurité ultra sophistiqué de ce site web a chiffré l’image contenant la destination ! <br/>\
                     Pour déchiffrer l’image, il faut que tu remettes la même réponse qu’à la question précédente mais en utilisant le même algorithme de chiffrement du site web. <br/>\
                     Ce systeme repose sur le principe de l'Avocat. <br/><br/>\
-                    QUESTION: Quel est le code chiffré ? \
+                    <B>QUESTION</B>: Quel est le code chiffré ? \
                 ",
                 reponse: "gkuk",
                 indice : "AvoK",
@@ -190,7 +197,7 @@
                     Rends toi à l'entrée de ce parc. Tu peux prendre un petit livret et faire le tampon mais attention il est interdit de l’ouvrir et en générale de chercher des informations sur ce parc.<br/>\
                     Tu n'as pas le droit de regarder les plans dans le parc non plus! <br/> \
                     Tu peux parcontre lire les panneaux explicatifs devant les monuments.<br/><br/>\
-                    QUESTION: Es-tu prête ? (oui / non) \
+                    <B>QUESTION</B>: Es-tu prête ? (oui / non) \
                 ",
                 reponse: "oui",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
@@ -199,7 +206,7 @@
 			{
                 question: " \
                     Retrouve l’endroit où j’ai pris cette photo. <br/><br/>\
-                    QUESTION: Quel est le numéro de l’arbre derrière toi ? \
+                    <B>QUESTION</B>: Quel est le numéro de l’arbre derrière toi ? \
                 ",
                 reponse: "140",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
@@ -209,7 +216,7 @@
                 question: " \
                     Voici un siège ! il se trouve sur la plus haute colline artificielle du parc qui culmine à 35m de hauteur. <br/>\
                     Son sommet est appelé Fujimi-yama. Dans une époque passée on pouvait voir le Mont Fuji ! <br/><br/>\
-                    QUESTION: Envoie-moi un selfie de vous 3 une fois la haut. \
+                    <B>QUESTION</B>: Envoie-moi un selfie de vous 3 une fois la haut. \
                 ",
                 reponse: "21031997",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
@@ -218,7 +225,7 @@
 			{
                 question: " \
                     Retrouve l’endroit où j’ai pris cette photo.<br/><br/>\
-                    QUESTION: Trouvé ? (oui / non) \
+                    <B>QUESTION</B>: Trouvé ? (oui / non) \
                 ",
                 reponse: "oui",
                 indice: "<img src='img/3_indice.jpg'/>", 
@@ -227,7 +234,7 @@
 			{
                 question: " \
                     Je suis le chemin que tu viens de traverser et où tu te trouves à présent. J’ai le même nom que les araignées dans les temps anciens! <br/><br/>\
-                    QUESTION:  Comment je m’appelle ? \
+                    <B>QUESTION</B>:  Comment je m’appelle ? \
                 ",
                 reponse: "sasaganinomichi", // enlever les espace ou les tirets
                 indice: "<img src='img/3_indice.jpg'/>", 
@@ -235,7 +242,7 @@
 			{
                 question: " \
                     Résout le rebus mi japonais mi anglais et trouve cet endroit. <br/><br/>\
-                    QUESTION: En quelle matière est fait cet endroit ?\
+                    <B>QUESTION</B>: En quelle matière est fait cet endroit ?\
                 ",
                 reponse: "pierre",
                 indice: "Les 3 premieres images sont en japonais et dénominent l'endroit.",
@@ -244,7 +251,7 @@
 			{
                 question: " \
                     Va au milieu du point, mets toi face au lac et à l‘île. <br/><br/>\
-                    QUESTION: C'est fait ? (oui / non) \
+                    <B>QUESTION</B>: C'est fait ? (oui / non) \
                 ",
                 reponse: "oui",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
@@ -252,7 +259,7 @@
 			{
                 question: " \
                     Super, fait un 180, vois tu le petite chemin et sa petite colline ? rends y toi ! <br/><br/>\
-                    QUESTION: T'y es ? (oui / non) \
+                    <B>QUESTION</B>: T'y es ? (oui / non) \
                 ",
                 reponse: "oui",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
@@ -267,7 +274,7 @@
                     Devenu la résidence secondaire d'Iwasaki Yataro (le fondateur de Mitsubishi) pendant la période Meiji, le jardin est légué à la Ville de Tokyo en 1938. <br/>\
                     Patrimoine culturel de renom, il est désigné par l'état 'Site Exceptionnel de Première Catégorie' en 1953. <br/>\
                     Dans le jardin, il y a des sites nommés “88 vues” qui reflètent des paysages pittoresques de la littérature classique chinoise ou des poésies classiques japonaises. <br/><br/>\
-                    QUESTION: Reponse 'GTH' \
+                    <B>QUESTION</B>: Reponse 'GTH' \
                 ",
                 reponse: "gth",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
@@ -275,7 +282,7 @@
 			{
                 question: " \
                     A coté d’un petit pavillion l'eau et les roches se divisent mutuellement. Il s’agit de 3 des 88 views. <br/><br/>\
-                    QUESTION: Chacunes de ces 3 views à un numéro, si tu fais la somme des 3 numéro, combien obtiens-tu ?  \
+                    <B>QUESTION</B>: Chacunes de ces 3 views à un numéro, si tu fais la somme des 3 numéro, combien obtiens-tu ?  \
                 ",
                 reponse: "131",
                 indice: "<img src='img/5_indice.jpg'/>",
@@ -283,7 +290,7 @@
 			{
                 question: " \
                     Regarde l’eau coulée, tu ne trouves pas ca hypnotique !? <br/><br/>\
-                    QUESTION : Au fait comment s’appelle le pavillion à coté ? \
+                    <B>QUESTION</B> : Au fait comment s’appelle le pavillion à coté ? \
                 ",
                 reponse: "takimichayaarbor",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
@@ -292,7 +299,7 @@
                 question: " \
                     Un Sekichu est un pilier en pierre qui marquait à l’origine chacun des 88 sites admirables du jardin, associés à la poésie Waka.<br/>\
                     Il n' en reste cependant aujourd' hui que 32 ! <br/><br/>\
-                    QUESTION: Retrouve ce Sekichu ! Tu y'es ? (oui / non) \
+                    <B>QUESTION</B>: Retrouve ce Sekichu ! Tu y'es ? (oui / non) \
                 ",
                 reponse: "oui",
                 indice: "La végétation autour est sûrement unique à cet endroit dont je fais l’angle en extrémité.",
@@ -300,7 +307,7 @@
             },
 			{
                 question: " \
-                    QUESTION: Comment s'appelle le nom du passage sur lequel tu es ? \
+                    <B>QUESTION</B>: Comment s'appelle le nom du passage sur lequel tu es ? \
                 ",
                 reponse: "hanatokomochipath",
                 indice: "Désolé pas d'indice ici, si tu es bloquée appelle moi.",
@@ -308,10 +315,20 @@
 			{
                 question: " \
                     Je suis une île légendaire où vit un sorcier immortel. Ces îles étaient construites au sein des jardins japonais pour souhaiter jeunesse éternelle et immortalité.<br/><br/>\
-                    QUESTION: Quel est mon nom ? \
+                    <B>QUESTION</B>: Quel est mon nom ? \
                 ",
                 reponse: "horaijima",
                 indice: "Je suis en pierre de dragon.",
+            },
+            {
+                question: " \
+                Félicitation ! Tu as terminé cette premiere étape d'anniversaire !<br\><br\>\
+                Tu dois te rentre ici pour 17h30 ! <br\> \
+                <B>QUESTION</B>: Quelle est la station ? \
+                ",
+                reponse: "shibuya",
+                img: "img/chien.jpg",
+                indice: "Désolé pas d indice ici, si tu es bloquée appelle moi.",
             },
 		];
 		var index = 0;
